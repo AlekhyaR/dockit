@@ -1,6 +1,6 @@
 source 'https://rubygems.org'
 
-gem 'rails', '3.2.6'
+gem 'rails', '3.2.1'
 
 # Bundle edge Rails instead:
 # gem 'rails', :git => 'git://github.com/rails/rails.git'
@@ -20,7 +20,7 @@ gem 'mysql2'
 #  gem 'uglifier', '>= 1.0.3'
 #end
 
-gem 'jquery-rails'
+#gem 'jquery-rails'
 gem 'devise'
 
 # To use ActiveModel has_secure_password
