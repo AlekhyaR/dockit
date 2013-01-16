@@ -5,10 +5,24 @@
   <%= stylesheet_link_tag    "application", :media => "all" %>
   <%= javascript_include_tag "application" %>
   <%= csrf_meta_tags %>
+  <a href=>
 </head>
 <body>
-
-<%= yield %>
-
+	<div class="navbar navbar-fixed-top navbar-inverse">
+	  <div class="navbar-inner">
+	    <a class="brand" href="#">Bluebook</a>
+	    <ul class="nav">
+	      <li class="active"><a href="#">Client</a></li>
+	      <li><a href="#">Link</a></li>
+	      <li><a href="#">Link2</a></li>
+	    </ul>
+	  </div>
+	</div>
+	<div class="container">
+      <div class="row">
+		<div class="span2"></div>
+		<div class="span10"><%= yield %></div>
+	  </div>
+	</div>
 </body>
 </html>

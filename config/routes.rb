@@ -14,7 +14,9 @@ Bluebook::Application.routes.draw do
 
   # Sample resource route (maps HTTP verbs to controller actions automatically):
   #   resources :products
-
+  
+  match 'clients/new' => 'clients#new', :via => :get
+  match 'clients/create' => "clients#create", :via => :post, :as => "clients"
   # Sample resource route with options:
   #   resources :products do
   #     member do
@@ -57,4 +59,5 @@ Bluebook::Application.routes.draw do
   # This is a legacy wild controller route that's not recommended for RESTful applications.
   # Note: This route will make all actions in every controller accessible via GET requests.
   # match ':controller(/:action(/:id))(.:format)'
+  root :to => "clients#new"
 end
