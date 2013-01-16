@@ -13,7 +13,7 @@
 	    <a class="brand" href="#">Bluebook</a>
 	    <ul class="nav">
 	      <li class="active"><a href="#">Client</a></li>
-	      <li><a href="#">Link</a></li>
+	      <li><a href="<%= invoice_new_path %>">Link</a></li>
 	      <li><a href="#">Link2</a></li>
 	    </ul>
 	  </div>
@@ -24,5 +24,10 @@
 		<div class="span10"><%= yield %></div>
 	  </div>
 	</div>
+	<% if notice.present? %>
+      <p>
+        <%= raw notice %>
+      </p>
+    <% end %>   
 </body>
 </html>

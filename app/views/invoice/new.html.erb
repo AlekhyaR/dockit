@@ -1,0 +1,26 @@
+<h2>New Invoice</h2>
+<%= form_for @invoice do |f| %>
+  <table>
+    <%= f.fields_for :customer do |customer_fields| %>
+	<tr>
+		<td>Name</td>
+		<td><%= customer_fields.text_field :name %></td>
+	</tr>
+	
+	<%= customer_fields.fields_for :address do |addr_fields|%>
+		<%= render :partial => '/partials/address_fields', :locals => {:f => addr_fields} %>
+	<% end %>
+	<% end %>
+	
+	<%= render 'product_fields', :f => f %>
+	<p><%= link_to_add_fields "Add Product", f, :products %></p>	
+	<tr>
+		<td>Tax</td>
+		<td><%= f.text_field :tax%></td>
+	</tr>
+	
+	<tr>
+		<td><%= f.submit :submit %></td>
+	</tr>
+</table>
+<% end %>

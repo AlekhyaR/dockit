@@ -1,0 +1,20 @@
+<table>
+	<tr>
+		<th>Customer Name</th>
+		<th>Address</th>
+		<th>Item</th>
+		<th>Quantity</th>
+		<th>Price</th>
+		<th>Tax</th>
+		<th>Grand Total</th>
+	</tr>
+	<% @invoices.each do |invoice| %>
+	<tr>
+		<td><%= invoice.customer.name %></td>
+		<td><%= invoice.customer.address.line_1 %></td>
+		<td><%= invoice.products %></td>
+		<td></td>
+		<td></td>
+		<td></td>
+		<td></td>
+	</tr>

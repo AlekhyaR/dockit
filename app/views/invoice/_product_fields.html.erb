@@ -1,0 +1,20 @@
+<p class="fields">
+<%= f.fields_for :products do |product| %>
+	<tr>
+		<td>Item</td>
+		<td><%= product.text_field :item %></td>
+	</tr>
+	<tr>
+		<td>Description</td>
+		<td><%= product.text_area :description, :rows => 3, :cols => 3 %></td>
+	</tr>
+	<tr>
+		<td>Price</td>
+		<td><%= product.text_field :price %></td>
+	</tr>
+	<tr>
+		<td>Quantity</td>
+		<td><%= product.text_field :quantity %></td>
+	</tr>
+<% end %>
+</p>

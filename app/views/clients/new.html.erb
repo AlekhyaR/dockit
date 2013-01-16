@@ -4,7 +4,9 @@
 	<tr><td>Name:</td>
 		<td><%= f.text_field :name %></td>
 	</tr>
-	<%= render :partial => 'addr_fields', :locals => {:f => f} %>
+	<%= f.fields_for :address do |addr_fields| %>
+		<%= render :partial => '/partials/address_fields', :locals => { :f => addr_fields} %>
+	<% end %>
 	<tr>
 		<td><%= f.submit :submit %></td>
 	</tr>
