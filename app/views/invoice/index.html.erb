@@ -2,19 +2,20 @@
 	<tr>
 		<th>Customer Name</th>
 		<th>Address</th>
-		<th>Item</th>
-		<th>Quantity</th>
-		<th>Price</th>
-		<th>Tax</th>
+		<th>Client</th>
+		<th>Date</th>
 		<th>Grand Total</th>
 	</tr>
 	<% @invoices.each do |invoice| %>
 	<tr>
 		<td><%= invoice.customer.name %></td>
 		<td><%= invoice.customer.address.line_1 %></td>
-		<td><%= invoice.products %></td>
-		<td></td>
-		<td></td>
-		<td></td>
-		<td></td>
+		<td><%= invoice.try(:client).try(:name) %></td>
+		<td><%= invoice.date %></td>
+		<td><%= grand_total(invoice) %></td>
+		<td><%= link_to 'Edit', invoice_edit_path(:id => invoice.id)%></td>
+		<td><%= link_to 'Generate', invoice_generate_path(:id => invoice.id)%></td>
+		<td><%= link_to 'Delete', invoice_delete_path(:id => invoice.id)%></td>
 	</tr>
+	<% end %>
+</table>

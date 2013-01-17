@@ -1,0 +1,90 @@
+<div class = "inv-container">
+	<div class="inv-header clearfix">
+		<div class="logo">
+			<h1>Bluebook</h1>		
+		</div>
+		<div class="address">
+			<%= @invoice.client.name %><br/>
+			<%= @invoice.client.address.line_1 %><br/>
+			<%= @invoice.client.address.city %><br/>
+			<%= @invoice.client.address.state %>-<%= @invoice.client.address.pincode %>
+		</div>
+	</div>
+	<div class="inv-main">
+		<div class="inv-details">
+			<div class="tot">	
+				<b>Total:</br></b>
+				<b class="g-tot"><%= grand_total(@invoice) %><br/></b>
+			</div>
+			<div class="bill">
+				<b>Bill To:<br/></b>
+				<%= @invoice.customer.name %><br/>
+				<%= @invoice.customer.address.line_1 %><br/>
+				<%= @invoice.customer.address.city %>,<%= @invoice.customer.address.state %>-<%= @invoice.customer.address.pincode %><br/>
+			</div>
+			<div class="inv-sub-details">
+				Invoice#:<br/>
+				<b><%= @invoice.id %><br/></b>
+			
+				Invoice Date:<br/>
+				<b><%= @invoice.date %><br/></b>
+			</div>
+		</div>
+		<!-- end of inv-details -->
+		<div class="inv-prod">
+			<table cellpadding="5" cellspacing="5" width="100%" border="0">
+				<tr>
+					<th width="60%">ITEMS</th>
+					<th width="10%">PRICE</th>
+					<th width="10%">QUANTITY</th>
+					<th width="20%">AMOUNT</th>
+				</tr>
+				<% @invoice.products.each do |prod| %>
+				<tr>
+					<td><%= prod.item %></td>
+					<td><%= prod.price %></td>
+					<td><%= prod.quantity %></td>
+					<td><%= prod.price * prod.quantity %></td>
+				</tr>
+				<% end %>
+				<tr>
+					<td>Item1</td>
+					<td>1000</td>
+					<td>2</td>
+					<td>2000</td>
+				</tr>
+				<tr>
+					<td>Item2</td>
+					<td>1500</td>
+					<td>2</td>
+					<td>3000</td>
+				</tr>
+				<tr class="no-border">
+					<td></td>
+					<td></td>
+					<td>Subtotal:</td>
+					<td><%= grand_total(@invoice) %></td>
+				</tr>
+				<tr class="no-border">
+					<td></td>
+					<td></td>
+					<td>Total:</td>
+					<td>$<%= grand_total(@invoice) %></td>
+				</tr>
+				<tr class="no-border">
+					<td></td>
+					<td></td>
+					<td>Payment Made:</td>
+					<td>0.0</td>
+				</tr>
+				<tr class="no-border">
+					<td></td>
+					<td></td>
+					<td>Balance Due:</td>
+					<td>$<%= grand_total(@invoice) %></td>
+				</tr>
+			</table>
+			<p>Thanks for your business</p>
+		</div>
+	</div>
+</div>

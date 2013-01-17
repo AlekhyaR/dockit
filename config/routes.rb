@@ -19,6 +19,10 @@ Bluebook::Application.routes.draw do
   match 'clients/create' => "clients#create", :via => :post, :as => "clients"
   match 'invoice/new' => 'invoice#new', :via => :get
   match 'invoice/create' => "invoice#create", :via => :post, :as => "invoices"
+  match 'invoice/index' => 'invoice#index', :via => :get
+  match 'invoice/edit' => 'invoice#edit'
+  match 'invoice/generate' => 'invoice#generate'
+  match 'invoice/delete' => 'invoice#delete', :via => :delete
   # Sample resource route with options:
   #   resources :products do
   #     member do

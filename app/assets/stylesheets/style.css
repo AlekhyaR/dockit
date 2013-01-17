@@ -1,0 +1,50 @@
+.inv-container {
+	width: 750px;
+	height: 610px;
+	background-color: white;
+	border: 1px solid #eee;
+}
+.logo{
+	width: 250px;
+	float: left;
+	padding: 20px 0 0 30px;
+}
+.address {
+	width: 250px;
+	float: right;
+	padding: 30px 50px 0;
+}
+.inv-details {
+	float: left;
+	padding-left: 40px;
+	width: 150px;
+}
+.tot {
+	margin-bottom: 50px;
+}
+.tot b {
+	font-size:15px;
+	color: #333;
+}
+.tot b.g-tot {
+	color: green;
+	font-size: 20px;
+}
+.bill { color:#333; margin-bottom:40px;}
+.bill b { font-size:15px;}
+.inv-sub-details { }
+.inv-sub-details b { font-size: 15px; margin-bottom:15px;display: block;}
+
+.inv-prod { float:right; width:525px;}
+.inv-prod table { margin-top: 95px; border-collapse:collapse; border-bottom: 3px solid green;}
+.inv-prod table th { text-align: left;padding-right:40px; color: green; border-bottom:3px solid green;}
+.inv-prod table td { border-bottom: 2px solid #eee;}
+.inv-prod table tr.no-border td { border:0;}
+.inv-prod p { font-size: 10px;}
+
+
+
+
+
+
+
